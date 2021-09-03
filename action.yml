@@ -4,6 +4,9 @@ inputs:
   source_file:
     description: 'Source file from the origin directory'
     required: true
+  destination_ower:
+    description: 'Destination repository ower'
+    required: false
   destination_repo:
     description: 'Destination repository'
     required: true
@@ -25,21 +28,18 @@ inputs:
   commit_message:
     description: 'A custom message for the commmit'
     required: false
-  checkout_workspace:
-    description: 'checkout workspace'
-    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.source-file }}
+    - ${{ inputs.destination-ower }}
     - ${{ inputs.destination-repo }}
     - ${{ inputs.destination-folder }}
     - ${{ inputs.user-email }}
     - ${{ inputs.destination-branch }}
     - ${{ inputs.destination-branch-create }}
     - ${{ inputs.commit-message }}
-    - ${{ inputs.checkout-workspace }}
 branding:
   icon: 'arrow-up'
   color: 'red'
