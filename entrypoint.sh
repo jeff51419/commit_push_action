@@ -4,8 +4,8 @@ set -e
 set -x
 
 env
-ls -l
-pwd
+ls -l $RUNNER_WORKSPACE
+ls -l $RUNNER_WORKSPACE/$INPUT_DESTINATION_REPO
 
 
 if [ -z "$INPUT_SOURCE_FILE" ]
@@ -32,7 +32,6 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 echo "Copying contents to git repo"
 echo "$RUNNER_WORKSPACE/$INPUT_DESTINATION_REPO"
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
-pwd
 cp -R "$RUNNER_WORKSPACE/$INPUT_DESTINATION_REPO/$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 cd "$CLONE_DIR"
 
