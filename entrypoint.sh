@@ -2,8 +2,8 @@
 
 set -e
 set -x
-set
 
+env
 if [ -z "$INPUT_SOURCE_FILE" ]
 then
   echo "Source file must be defined"
