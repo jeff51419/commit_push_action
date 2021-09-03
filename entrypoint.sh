@@ -22,7 +22,7 @@ echo "----------------------------------"
 echo "Cloning destination git repository"
 git config --global user.email "$INPUT_USER_EMAIL"
 git config --global user.name "$INPUT_USER_NAME"
-git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-token:$API_TOKEN_GITHUB@github.com/$INPUT_DESTINATION_OWER/$INPUT_DESTINATION_REPO.git" "$CLONE_DIR"
+git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-token:$API_TOKEN_GITHUB@github.com/$INPUT_DESTINATION_OWNER/$INPUT_DESTINATION_REPO.git" "$CLONE_DIR"
 
 echo "----------------------------------"
 echo "Copying contents to git repo"

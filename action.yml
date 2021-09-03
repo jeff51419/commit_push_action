@@ -4,8 +4,8 @@ inputs:
   source_file:
     description: 'Source file from the origin directory'
     required: true
-  destination_ower:
-    description: 'Destination repository ower'
+  destination_owner:
+    description: 'Destination repository owner'
     required: false
   destination_repo:
     description: 'Destination repository'
@@ -33,7 +33,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.source-file }}
-    - ${{ inputs.destination-ower }}
+    - ${{ inputs.destination-owner }}
     - ${{ inputs.destination-repo }}
     - ${{ inputs.destination-folder }}
     - ${{ inputs.user-email }}
