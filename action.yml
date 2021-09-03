@@ -25,6 +25,9 @@ inputs:
   commit_message:
     description: 'A custom message for the commmit'
     required: false
+  checkout_workspace:
+    description: 'checkout workspace'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -36,6 +39,7 @@ runs:
     - ${{ inputs.destination-branch }}
     - ${{ inputs.destination-branch-create }}
     - ${{ inputs.commit-message }}
+    - ${{ inputs.checkout-workspace }}
 branding:
-  icon: 'git-commit'
-  color: 'green'
+  icon: 'arrow-up'
+  color: 'red'
