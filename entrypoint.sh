@@ -25,9 +25,10 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 
 echo "----------------------------------"
 echo "Copying contents to git repo"
+echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 pwd
-cp -R "$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
+cp -R "$GITHUB_WORKSPACE/$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 cd "$CLONE_DIR"
 
 if [ ! -z "$INPUT_DESTINATION_BRANCH_CREATE" ]
