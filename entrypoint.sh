@@ -4,9 +4,7 @@ set -e
 set -x
 
 env
-ls -l $RUNNER_WORKSPACE
-ls -l $RUNNER_WORKSPACE/$INPUT_DESTINATION_REPO
-
+ls -l /github/workspace
 
 if [ -z "$INPUT_SOURCE_FILE" ]
 then
