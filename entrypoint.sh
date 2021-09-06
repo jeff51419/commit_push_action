@@ -3,8 +3,9 @@
 set -e
 set -x
 
-env
+echo "list $CHECKOUT_WORKSPACE"
 ls -l $CHECKOUT_WORKSPACE
+tree /
 
 if [ -z "$INPUT_SOURCE_FILE" ]
 then
