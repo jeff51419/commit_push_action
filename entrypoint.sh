@@ -4,7 +4,7 @@ set -e
 set -x
 
 env
-ls -l /github/workspace
+ls -l $CHECKOUT_WORKSPACE
 
 if [ -z "$INPUT_SOURCE_FILE" ]
 then
@@ -28,9 +28,9 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://x-access-t
 
 
 echo "Copying contents to git repo"
-echo "$RUNNER_WORKSPACE/$INPUT_DESTINATION_REPO"
+
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
-cp -R "$RUNNER_WORKSPACE/$INPUT_DESTINATION_REPO/$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
+cp -R "$CHECKOUT_WORKSPACE/$INPUT_SOURCE_FILE" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 cd "$CLONE_DIR"
 
 if [ ! -z "$INPUT_DESTINATION_BRANCH_CREATE" ]
